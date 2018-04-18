@@ -3,6 +3,7 @@ package com.algorithm;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.*;
 
 /**
@@ -11,15 +12,15 @@ import java.util.*;
  * Github : http://github.com/HyunjunJeon
  */
 public class JavaSyntax {
-    public static void main(String[] args) {
-        hashSetTest();
-    }
-    // 최대힙 구현을 위한 compare
-    static class Compare implements Comparator<Integer>{
-        public int compare(Integer one, Integer two){
-            return two.compareTo(one);
-        }
-    }
+//    public static void main(String[] args) {
+//        hashSetTest();
+//    }
+//    // 최대힙 구현을 위한 compare
+//    static class Compare implements Comparator<Integer>{
+//        public int compare(Integer one, Integer two){
+//            return two.compareTo(one);
+//        }
+//    }
 
     // 최소/최대힙
     public static void minAndMaxHeap(){
@@ -44,7 +45,7 @@ public class JavaSyntax {
 
     // 듣보잡
     public static void mapTest() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStream(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] line = br.readLine().split(" ");
         int n = Integer.parseInt(line[0]); // 듣도못한
         int m = Integer.parseInt(line[1]); // 보도못한
@@ -55,7 +56,7 @@ public class JavaSyntax {
             String name = br.readLine();
             a.put(name,1); // 듣도못한 사람에게는 1
         }
-        for(int i=; i<m; i++){
+        for(int i=0; i<m; i++){
             String name = br.readLine();
             Integer v = a.get(name);
             if(v == null){
